@@ -1,0 +1,8 @@
+{
+  "name": "esm-test-pkg",
+  "version": "0.0.1",
+  "description": "Test weird ESM things",
+  "main": "index.js",
+  "author": "Ryan Roemer <ryan.roemer@formidable.com>",
+  "license": "MIT"
+}

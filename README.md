@@ -40,3 +40,29 @@ Instead rename cjs.js to end in .cjs, change the requiring code to use dynamic i
 
 Node.js v18.7.0
 ```
+
+## Notes
+
+### Changing CJS suffix would work
+
+Changing `node_modules/my-pkg/cjs.js` to `node_modules/my-pkg/cjs.cjs` with the `.cjs` suffix, would cause the program to work:
+
+```diff
+diff --git a/node_modules/my-pkg/cjs.js b/node_modules/my-pkg/cjs.cjs
+similarity index 100%
+rename from node_modules/my-pkg/cjs.js
+rename to node_modules/my-pkg/cjs.cjs
+diff --git a/node_modules/my-pkg/package.json b/node_modules/my-pkg/package.json
+index bb7f270..af7610e 100644
+--- a/node_modules/my-pkg/package.json
++++ b/node_modules/my-pkg/package.json
+@@ -9,7 +9,7 @@
+   "exports": {
+     ".": {
+       "import": "./esm.js",
+-      "require": "./cjs.js"
++      "require": "./cjs.cjs"
+     }
+   }
+ }
+```
